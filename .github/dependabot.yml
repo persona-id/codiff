@@ -1,0 +1,20 @@
+# Dependabot security updates for open VLN supply-chain findings.
+# Version updates stay off (limit 0); security updates ignore that limit.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+    cooldown:
+      default-days: 7
+    groups:
+      production-security:
+        applies-to: security-updates
+        dependency-type: production
+        patterns: ['*']
+      development-security:
+        applies-to: security-updates
+        dependency-type: development
+        patterns: ['*']
